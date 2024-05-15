@@ -7,14 +7,10 @@ async function insertData(req,res) {
             return res.status(405).json({message:"Method tidak diperbolehkan"})
         }
 
-        const {todo} = req.body
-
-        if (!todo) {
-            return res.status(400).json({ message: "Todo harus diisi" });
-        }
+        const {title,contain} = req.body
 
           const rows = await sql` INSERT INTO note (title,contain)
-          VALUES (${todo})`
+          VALUES (${title},${contain})`
 
         res.status(200).json({message:"Success", data:rows})
     } catch(e){

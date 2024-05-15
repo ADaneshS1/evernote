@@ -5,7 +5,6 @@ const {sql} = require('@vercel/postgres')
 async function execute() {
 
     try {
-
         const rows = await sql`
         INSERT INTO note (title,contain)
         VALUES ('JUDUL','Isi teks')
