@@ -13,7 +13,7 @@ async function execute() {
         contain VARCHAR(1500) NOT NULL,
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
         upload_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL
-    ) 
+    )   
     `;
     console.log(createTable)
 }

@@ -10,7 +10,6 @@ export default function Home() {
     fetch(`/api/getData`)
     .then((res) => res.json())
     .then((data) => {
-      console.log(data.data)
       setShowAllData(data.data)
     })
     .catch((err) => {
@@ -19,17 +18,20 @@ export default function Home() {
   }, [])
   return (
    <>
-      <p>Halaman depan</p>
+      <h2>Aplikasi Pencatatan</h2>
       <button onClick={() => {
         router.push(`/add-data`)
       }}>Add Data</button>
       <div>
           {showAllData && showAllData.map((data,index) => {
             return (
-              <div key={index}>
+              <div key={index} style={{ margin:"15px 0" }}>
                 {data.id}
+                {". "}
                 {data.title}
+                {" "}
                 <button onClick={() => router.push(`/detail/${data.id}`)}>Detail</button>
+                <button onClick={() => router.push(`/edit/${data.id}`)}>Edit</button>
               </div>
             )
           })}

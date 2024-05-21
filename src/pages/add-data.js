@@ -25,7 +25,6 @@ export default function Handler() {
             return response.json();
         })
         .then((json) => {
-            console.log(json)
             alert("Data berhasil ditambah")
             router.push("/")
         })

@@ -17,7 +17,6 @@ export default function Handler() {
 
     return(
         <>
-            Ini id {idDetail}
             {showData && (
                 <>
                     <div>Id: {idDetail}</div>
