@@ -16,6 +16,19 @@ export default function Home() {
       alert("ERORR")
     })
   }, [])
+
+  const handleDelete = (id) => {
+    fetch(`/api/delData?id=${id}`, {
+      method:"DELETE",
+    })
+    .then((res) => res.json())
+    .then(()=>{
+      router.reload()  
+    })
+    .catch((err) => {
+      alert("Erorr ",err.message)
+    })
+  }
   return (
    <>
       <h2>Aplikasi Pencatatan</h2>
@@ -32,6 +45,7 @@ export default function Home() {
                 {" "}
                 <button onClick={() => router.push(`/detail/${data.id}`)}>Detail</button>
                 <button onClick={() => router.push(`/edit/${data.id}`)}>Edit</button>
+                <button onClick={() => handleDelete(data.id)}>Delete</button>
               </div>
             )
           })}
