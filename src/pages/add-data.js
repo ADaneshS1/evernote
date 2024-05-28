@@ -18,13 +18,8 @@ export default function Handler() {
                 contain: inputValueContain
             })
         })
-        .then((response) => {
-            if(!response){
-                throw new Error("Gagal menambah data")
-            }
-            return response.json();
-        })
-        .then((json) => {
+        .then((res) => res.json())
+        .then(() => {
             alert("Data berhasil ditambah")
             router.push("/")
         })

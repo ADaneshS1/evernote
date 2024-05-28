@@ -30,7 +30,7 @@ export default function Home() {
     })
   }
   return (
-   <>
+   <div style={{ fontFamily:"cursive" }}>
       <h2>Aplikasi Pencatatan</h2>
       <button onClick={() => {
         router.push(`/add-data`)
@@ -50,6 +50,6 @@ export default function Home() {
             )
           })}
       </div>
-   </>
+   </div>
   );
 }

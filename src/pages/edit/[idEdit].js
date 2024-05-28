@@ -13,7 +13,6 @@ export default function EditData() {
             .then((res) => res.json())
             .then((data) => {
                 setDataDetail(data.data ? data.data : null);
-                console.log(data.data);
             })
             .catch((err) => {
                 console.error("Ada eror: ", err);
